@@ -1,0 +1,43 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "scripts": {
+        "start": "npx webpack --config config/index.js --watch",
+        "build": "npx webpack --config config/index.js && node config/rsa.js",
+        "compile": "java org.mozilla.javascript.tools.jsc.Main dist/app.js && dx --dex --output =app.dex dist/app.class",
+        "update": "npm update \"@auto.pro/core\" \"@auto.pro/action\" \"@auto.pro/search\" \"@auto.pro/stream\" \"@auto.pro/webview\" "
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.10.2",
+        "@babel/plugin-transform-modules-commonjs": "^7.10.1",
+        "@babel/plugin-transform-runtime": "^7.10.1",
+        "@babel/preset-env": "^7.10.2",
+        "@babel/runtime": "^7.10.2",
+        "babel-loader": "^8.1.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "html-webpack-inline-source-plugin": "0.0.10",
+        "html-webpack-plugin": "^3.2.0",
+        "ts-loader": "^6.2.2",
+        "typescript": "^3.9.5",
+        "url-loader": "^1.1.2",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11",
+        "webpack-obfuscator": "^0.25.5"
+    },
+    "dependencies": {
+        "@auto.pro/action": "^8.2.2",
+        "@auto.pro/core": "^8.2.5",
+        "@auto.pro/search": "^8.2.4",
+        "@auto.pro/stream": "^8.3.1",
+        "@auto.pro/webview": "^8.4.3",
+        "@babel/polyfill": "^7.10.1",
+        "crypto-js": "^4.0.0",
+        "es6-shim": "^0.35.5",
+        "rxjs": "^6.5.5",
+        "rxjs-spy": "^7.5.1"
+    }
+}
